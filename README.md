@@ -38,7 +38,7 @@ You will get a URL like `https://kobe-chik.vercel.app`.
 Update Open Graph URLs in `index.html` to absolute HTTPS paths on your Vercel domain:
 
 - `og:url`
-- `og:image` / `twitter:image` → `https://YOUR-PROJECT.vercel.app/assets/og-image.jpg`
+- `og:image` / `twitter:image` → `https://v0-kobechik.vercel.app/assets/og-image.jpg`
 
 ## Local preview
 
