@@ -1,6 +1,6 @@
 # Kobe Chik — Personal website (Vercel)
 
-Static personal site for **Kobe Chik** (CHIK, Yui Fung). No build step.
+Static personal site for **Kobe Chik**. No build step.
 
 ## Deploy on Vercel (first project)
 

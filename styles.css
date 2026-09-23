@@ -1297,6 +1297,50 @@ html.reduce-motion .parallax-target {
   transform: none !important;
 }
 
+/* Print: strip motion, dark backgrounds, and decorative chrome for a clean readout */
+@media print {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero-enter,
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .site-header,
+  .hero-actions,
+  .social-links,
+  .cert-toggle,
+  .parallax-wrap {
+    display: block;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+
+  .hero,
+  .section {
+    background: #fff !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+  }
+}
+
 html.reduce-motion .sticky-story-pin {
   position: static !important;
 }
