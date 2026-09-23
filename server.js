@@ -11,6 +11,7 @@ const contentTypes = {
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
   ".png": "image/png",
+  ".webp": "image/webp",
   ".pdf": "application/pdf",
   ".svg": "image/svg+xml",
   ".txt": "text/plain; charset=utf-8",
@@ -31,8 +32,15 @@ const server = http.createServer((request, response) => {
 
   fs.readFile(filePath, (error, content) => {
     if (error) {
-      response.writeHead(error.code === "ENOENT" ? 404 : 500);
-      response.end(error.code === "ENOENT" ? "Not found" : "Server error");
+      if (error.code === "ENOENT") {
+        fs.readFile(path.join(root, "404.html"), (notFoundError, notFoundContent) => {
+          response.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
+          response.end(notFoundError ? "Not found" : notFoundContent);
+        });
+        return;
+      }
+      response.writeHead(500);
+      response.end("Server error");
       return;
     }
 
