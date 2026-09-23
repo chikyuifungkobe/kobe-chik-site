@@ -240,6 +240,23 @@ button:focus-visible {
   color: var(--text-faint);
 }
 
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 1.25rem;
+}
+
+.hero-actions .btn {
+  min-height: 2.9rem;
+  padding-inline: 1.35rem;
+}
+
+.hero-actions .btn span {
+  font-size: 1rem;
+  line-height: 1;
+}
+
 .hero-lede {
   max-width: 38rem;
   margin: 0 0 0.85rem;
