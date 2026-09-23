@@ -1,6 +1,21 @@
 (function () {
   "use strict";
 
+  // Safety net: if anything below throws, don't leave hero/section content
+  // stuck at opacity:0 (those styles only apply once html.js is set).
+  try {
+    boot();
+  } catch (err) {
+    console.error("[v0] script error, forcing content visible", err);
+    document.querySelectorAll(".hero-enter").forEach(function (el) {
+      el.classList.add("is-in");
+    });
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      el.classList.add("is-visible");
+    });
+  }
+
+  function boot() {
   const yearEl = document.getElementById("year");
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
@@ -270,4 +285,5 @@
   runHeroEntrance();
   initRevealsAndStats();
   initParallax();
+  }
 })();
