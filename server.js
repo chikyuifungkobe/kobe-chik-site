@@ -13,6 +13,9 @@ const contentTypes = {
   ".png": "image/png",
   ".pdf": "application/pdf",
   ".svg": "image/svg+xml",
+  ".txt": "text/plain; charset=utf-8",
+  ".xml": "application/xml; charset=utf-8",
+  ".ico": "image/x-icon",
 };
 
 const server = http.createServer((request, response) => {
