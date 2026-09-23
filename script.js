@@ -56,28 +56,6 @@
     });
   }
 
-  // Certifications expand / collapse
-  const certToggle = document.getElementById("cert-toggle");
-  const certExtras = document.querySelectorAll(".cert-extra");
-
-  if (certToggle && certExtras.length) {
-    certToggle.addEventListener("click", function () {
-      const expanded = certToggle.getAttribute("aria-expanded") === "true";
-      const next = !expanded;
-      certToggle.setAttribute("aria-expanded", String(next));
-      certExtras.forEach(function (item) {
-        if (next) {
-          item.removeAttribute("hidden");
-        } else {
-          item.setAttribute("hidden", "");
-        }
-      });
-      certToggle.textContent = next
-        ? "Show fewer certifications"
-        : "Show more certifications";
-    });
-  }
-
   /* ============================================
      Motion: entrance, reveals, count-up, parallax
      ============================================ */
